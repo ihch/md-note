@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.13.x
+      - name: version check
+        run: node -v
+    
+      # - name: cache
+      #   uses: actions/cache@v1
+      #   with:
+      
+      - name: install
+        run: yarn install
+      
+      - name: build
+        run: yarn build
