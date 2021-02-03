@@ -18,10 +18,11 @@ jobs:
           node-version: 14.13.x
       - name: version check
         run: node -v
-    
-      # - name: cache
-      #   uses: actions/cache@v1
-      #   with:
+      
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       
       - name: install
         run: yarn install
