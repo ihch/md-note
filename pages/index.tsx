@@ -1,7 +1,7 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
 import Doc from '../components/Doc.mdx';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
 
 type IProps = {};
 
@@ -21,5 +21,5 @@ export default function Home() {
         <Doc />
       </MDXProvider>
     </div>
-  )
+  );
 }

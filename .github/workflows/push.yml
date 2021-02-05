@@ -22,14 +22,14 @@ jobs:
           node-version: 14.13.x
       - name: version check
         run: node -v
-      
+
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      
+
       - name: install
         run: yarn install
-      
+
       - name: build
         run: yarn build
