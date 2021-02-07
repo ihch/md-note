@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
+import Header from '../components/Header';
 import Doc from '../components/Doc.mdx';
-import styles from '../styles/Home.module.css';
 
 type IH1Props = {};
 const H1 = (props: IH1Props) => <h1 style={{ color: 'teal', textAlign: 'left' }} {...props} />;
@@ -13,11 +13,13 @@ const components = {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header></Header>
 
       <MDXProvider components={components}>
         <Doc />
