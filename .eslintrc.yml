@@ -20,6 +20,6 @@ settings:
 rules:
   'no-use-before-define': off
 overrides:
-  files: ["**/*.tsx"],
+  files: ["**/*.tsx"]
   rules:
     "react/prop-types": off
