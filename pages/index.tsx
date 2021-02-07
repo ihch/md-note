@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
+import Header from '../components/Header';
 import Doc from '../components/Doc.mdx';
 
 type IH1Props = {};
@@ -17,6 +18,8 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header title="ihch dev" />
 
       <MDXProvider components={components}>
         <Doc />
