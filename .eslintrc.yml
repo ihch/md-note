@@ -17,3 +17,5 @@ plugins:
 settings:
   react:
     version: 'detect'
+rules:
+  'no-use-before-define': off
