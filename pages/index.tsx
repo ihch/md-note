@@ -1,12 +1,14 @@
+import React from 'react';
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
 import Doc from '../components/Doc.mdx';
 import styles from '../styles/Home.module.css';
 
-type IProps = {};
+type IH1Props = {};
+const H1 = (props: IH1Props) => <h1 style={{ color: 'teal', textAlign: 'left' }} {...props} />;
 
 const components = {
-  h1: (props: IProps) => <h1 style={{ color: 'teal', textAlign: 'left' }} {...props} />,
+  h1: H1,
 };
 
 export default function Home() {
