@@ -30,7 +30,7 @@ jobs:
 
       - name: install
         run: yarn install
-      
+
       - name: lint
         run: yarn run eslint .
 
