@@ -19,3 +19,7 @@ settings:
     version: 'detect'
 rules:
   'no-use-before-define': off
+overrides:
+  files: ["**/*.tsx"],
+  rules:
+    "react/prop-types": off
