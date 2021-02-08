@@ -3,12 +3,15 @@ import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
 import Header from '../components/Header';
 import Doc from '../components/Doc.mdx';
-
-type IH1Props = {};
-const H1 = (props: IH1Props) => <h1 style={{ color: 'teal', textAlign: 'left' }} {...props} />;
+import { H1, H2, H3 } from 'components/Heading';
+import { A, P } from 'components/Text';
 
 const components = {
   h1: H1,
+  h2: H2,
+  h3: H3,
+  p: P,
+  a: A,
 };
 
 export default function Home() {
@@ -21,9 +24,11 @@ export default function Home() {
 
       <Header title="ihch dev" />
 
-      <MDXProvider components={components}>
-        <Doc />
-      </MDXProvider>
+      <div className="px-16 py-8">
+        <MDXProvider components={components}>
+          <Doc />
+        </MDXProvider>
+      </div>
     </div>
   );
 }
