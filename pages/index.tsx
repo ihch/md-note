@@ -22,6 +22,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* fouc対処 */}
+      <script />
+
       <Header title="ihch dev" />
 
       <div className="px-16 py-8">
