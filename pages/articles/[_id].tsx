@@ -25,22 +25,14 @@ const Article: React.FC = () => {
     <div>
       <Head>
         <title>{article?.name}</title>
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@nemu_sou" />
-        <meta name="twitter:creator" content="@nemu_sou" />
-        {/* TODO この辺動的に生成したいよね */}
-        <meta
-          property="og:url"
-          content="https://ihch.github.io/articles/0001"
-        />
-        <meta property="og:title" content="Next.jsでブログを作った" />
-        {/* TODO <meta property="og:image" content="" /> */}
       </Head>
 
       <Header title="ihch dev" />
 
       <div className="px-16 py-8">
-        <MDXProvider components={components}>{article && article.component({})}</MDXProvider>
+        <MDXProvider components={components} >
+          {article && article.component({})}
+        </MDXProvider>
       </div>
     </div>
   );
