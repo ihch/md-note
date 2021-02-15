@@ -5,4 +5,5 @@ const withMDX = require('@next/mdx')({
 module.exports = withMDX({
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   assetPrefix: process.env.NODE_ENV === 'production' ? '/md-note/' : '',
+  basePath: '/md-note',
 });
