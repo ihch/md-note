@@ -31,7 +31,7 @@ const Article: React.FC = () => {
         {/* TODO この辺動的に生成したいよね */}
         <meta
           property="og:url"
-          content="https://ihch.github.io/articles/0001"
+          content="https://ihch.github.io/md-note/articles/0001"
         />
         <meta property="og:title" content="Next.jsでブログを作った" />
         {/* TODO <meta property="og:image" content="" /> */}
