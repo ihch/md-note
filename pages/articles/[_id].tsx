@@ -1,5 +1,4 @@
 import React from 'react';
-import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { MDXProvider } from '@mdx-js/react';
