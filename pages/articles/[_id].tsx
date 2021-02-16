@@ -1,5 +1,5 @@
 import React from 'react';
-import config from 'next/config';
+import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { MDXProvider } from '@mdx-js/react';
@@ -16,9 +16,7 @@ const components = {
   a: A,
 };
 
-
 const Article: React.FC = () => {
-  const { BUILD_URL } = config();
   const router = useRouter();
   const { _id } = router.query;
   const article = Articles.articles.find((article) => article.id === _id);
@@ -33,7 +31,7 @@ const Article: React.FC = () => {
         {/* TODO この辺動的に生成したいよね */}
         <meta
           property="og:url"
-          content={`${BUILD_URL}/articles/0001`}
+          content={`${process.env.BUILD_URL}/articles/0001`}
         />
         <meta property="og:title" content="Next.jsでブログを作った" />
         {/* TODO <meta property="og:image" content="" /> */}
