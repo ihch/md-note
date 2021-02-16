@@ -15,7 +15,6 @@ const components = {
   a: A,
 };
 
-
 const Article: React.FC = () => {
   const router = useRouter();
   const { _id } = router.query;
@@ -31,7 +30,7 @@ const Article: React.FC = () => {
         {/* TODO この辺動的に生成したいよね */}
         <meta
           property="og:url"
-          content="https://ihch.github.io/md-note/articles/0001"
+          content={`${process.env.BUILD_URL}/articles/0001`}
         />
         <meta property="og:title" content="Next.jsでブログを作った" />
         {/* TODO <meta property="og:image" content="" /> */}
