@@ -30,7 +30,7 @@ export default function Home() {
       <div className="px-16 py-8">
         <MDXProvider components={components}>
           {articles.map((article) => (
-            <Link href={`/articles/${article.id}`} key={article.id}>
+            <Link href={`/articles/${article.name}`} key={article.id}>
               <a>
                 {article.date} {article.name}
               </a>

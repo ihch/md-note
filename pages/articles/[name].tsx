@@ -17,8 +17,8 @@ const components = {
 
 const Article: React.FC = () => {
   const router = useRouter();
-  const { _id } = router.query;
-  const article = Articles.articles.find((article) => article.id === _id);
+  const { name } = router.query;
+  const article = Articles.articles.find((article) => article.name === name);
 
   return (
     <div>
@@ -27,12 +27,11 @@ const Article: React.FC = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@nemu_sou" />
         <meta name="twitter:creator" content="@nemu_sou" />
-        {/* TODO この辺動的に生成したいよね */}
         <meta
           property="og:url"
-          content={`${process.env.BUILD_URL}/articles/0001`}
+          content={`${process.env.BUILD_URL}/articles/${article?.name}`}
         />
-        <meta property="og:title" content="Next.jsでブログを作った" />
+        <meta property="og:title" content={article?.name} />
         {/* TODO <meta property="og:image" content="" /> */}
       </Head>
 
