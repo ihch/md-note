@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { MDXProvider } from '@mdx-js/react';
-import Header from 'components/Header';
 import { H1, H2, H3 } from 'components/Heading';
 import { A, P } from 'components/Text';
 import Articles from 'articles';
@@ -34,8 +33,6 @@ const Article: React.FC = () => {
         <meta property="og:title" content={article?.name} />
         {/* TODO <meta property="og:image" content="" /> */}
       </Head>
-
-      <Header title="ihch dev" />
 
       <div className="px-16 py-8">
         <MDXProvider components={components}>{article && article.component({})}</MDXProvider>
