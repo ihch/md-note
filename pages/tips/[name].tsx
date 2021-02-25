@@ -29,7 +29,7 @@ const Tip: React.FC = () => {
         <meta name="twitter:creator" content="@nemu_sou" />
         <meta
           property="og:url"
-          content={`${process.env.BUILD_URL}/tip/${tip?.name}`}
+          content={`${process.env.BUILD_URL}/tips/${tip?.name}`}
         />
         <meta property="og:title" content={tip?.name} />
         {/* TODO <meta property="og:image" content="" /> */}
