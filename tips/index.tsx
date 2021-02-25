@@ -1,12 +1,12 @@
-import TestTips from './test-tips.mdx';
+import KubernetesIntroTips from './kubernetes-intro.mdx';
 
 export default {
   tips: [
     {
       id: '0001',
-      name: 'tips test',
+      name: 'kubernetesの勉強をはじめた',
       date: '2021/02/25',
-      component: TestTips,
+      component: KubernetesIntroTips,
     },
   ],
 };
