@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { H1, H2, H3 } from 'components/Heading';
