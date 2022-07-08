@@ -1,9 +1,9 @@
-# Next.jsでブログを作った
+# Next.js でブログを作った
 
 ## 概要
 
 - 自由に書ける場所・技術を試せる場所がほしかった
-- markdownで書けて見た目をよしなにいじりたかった
+- markdown で書けて見た目をよしなにいじりたかった
 
 ## 使ったもの
 
@@ -21,44 +21,44 @@
 
 ### 1
 
-ビルドしてgithub pagesに上げたもののcssなどのロードに失敗していた。  
-devtoolsのconsoleを見ると404だがbranchには上がっている。原因はgithub pagesのURLがドメインとプロジェクト名(`${domain}/${project_name}`)なのに、ドメインの下に直接cssファイルなどを読みにいっていたこと。`next.config.js`に`assetPrefix`を指定して修正。
+ビルドして github pages に上げたものの css などのロードに失敗していた。  
+devtools の console を見ると 404 だが branch には上がっている。原因は github pages の URL がドメインとプロジェクト名(`${domain}/${project_name}`)なのに、ドメインの下に直接 css ファイルなどを読みにいっていたこと。`next.config.js`に`assetPrefix`を指定して修正。
 
 ### 2
 
-cssの読み込みがめちゃくちゃ遅い。devtoolsのnetworkを見ると1秒以上かかっている上に2MBを超えていた。  
-なんとなくTailwind CSSを全部入りで取っているようなサイズだったので、purgeの設定を追加した。早くなった。
+css の読み込みがめちゃくちゃ遅い。devtools の network を見ると 1 秒以上かかっている上に 2MB を超えていた。  
+なんとなく Tailwind CSS を全部入りで取っているようなサイズだったので、purge の設定を追加した。早くなった。
 
 ## 使ったものの緩いイメージ
 
 ### React
 
-宣言的UIの今どきなライブラリで、値の状態管理をうまくやって再描画をしてくれる。  
-hooksの登場によってロジックをUIから切り離しやすくなった。  
-Vueやsvelteがライバル。どちらかというとHTMLに近いテンプレート構文よりJSに近いJSXが好き。
+宣言的 UI の今どきなライブラリで、値の状態管理をうまくやって再描画をしてくれる。  
+hooks の登場によってロジックを UI から切り離しやすくなった。  
+Vue や svelte がライバル。どちらかというと HTML に近いテンプレート構文より JS に近い JSX が好き。
 
 ### Next.js
 
-Reactをベースにしたフロントエンドアプリケーションのフレームワーク。  
+React をベースにしたフロントエンドアプリケーションのフレームワーク。  
 ルーティングやバンドルシステム、ビルドツールを内包したすごいやつ。  
-Nuxt.jsがライバル。composition apiが使えるVue3に対応したNuxt.jsが出たらそっちも触りたい。
+Nuxt.js がライバル。composition api が使える Vue3 に対応した Nuxt.js が出たらそっちも触りたい。
 
 ### TypeScript
 
-JavaScriptに型の恩恵を授けてくれるAltJS。型と補完とlinterの介護のもとで開発をしている。
-新しく始めるJSのプロジェクトなら使わない理由はないと思う。弱い人間なので。
+JavaScript に型の恩恵を授けてくれる AltJS。型と補完と linter の介護のもとで開発をしている。
+新しく始める JS のプロジェクトなら使わない理由はないと思う。弱い人間なので。
 
 ### Tailwind CSS
 
-コンポーネントにtailwindで定義済みのclassを指定することでスタイルが当てられる。  
-tailwindでのclass名を覚える必要はあるが、極力cssを書かずに開発がしたいと思ったので入れた。カスタムのclassも定義できる。
+コンポーネントに tailwind で定義済みの class を指定することでスタイルが当てられる。  
+tailwind での class 名を覚える必要はあるが、極力 css を書かずに開発がしたいと思ったので入れた。カスタムの class も定義できる。
 
-クラス名を考えなくていい・ビルド時に最適化をする思想でLightwind CSSというものもある。  
-class名ではなくcssを直接書くので一般的なやり方に近く移行は楽そう。
+クラス名を考えなくていい・ビルド時に最適化をする思想で Lightwind CSS というものもある。  
+class 名ではなく css を直接書くので一般的なやり方に近く移行は楽そう。
 
 ### mdx
 
-markdown内でjsxを書けるようにしたもの。markdownのタグをコンポーネントに変換もできてスタイルをいじるのが楽。
+markdown 内で jsx を書けるようにしたもの。markdown のタグをコンポーネントに変換もできてスタイルをいじるのが楽。
 
 ### prettier
 
@@ -66,7 +66,7 @@ markdown内でjsxを書けるようにしたもの。markdownのタグをコン�
 
 ### eslint
 
-構文チェッカー(linter)。ECMAScript的におかしいものやプロジェクトのルールで避けたいものを機械的にチェックしてくれる。
+構文チェッカー(linter)。ECMAScript 的におかしいものやプロジェクトのルールで避けたいものを機械的にチェックしてくれる。
 
 ### github pages
 
@@ -74,8 +74,8 @@ markdown内でjsxを書けるようにしたもの。markdownのタグをコン�
 
 ### github actions
 
-PRを出したときやpushした時にlintとビルドテストをしている。  
-masterに変更が起きた時にgithub pagesの方にビルドして上げ直すようにしている。便利。
+PR を出したときや push した時に lint とビルドテストをしている。  
+master に変更が起きた時に github pages の方にビルドして上げ直すようにしている。便利。
 
 ## リンク
 

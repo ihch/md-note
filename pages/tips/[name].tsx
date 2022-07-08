@@ -14,7 +14,6 @@ const components = {
   a: A,
 };
 
-
 const Tip: React.FC = () => {
   const router = useRouter();
   const { name } = router.query;
@@ -27,10 +26,7 @@ const Tip: React.FC = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@nemu_sou" />
         <meta name="twitter:creator" content="@nemu_sou" />
-        <meta
-          property="og:url"
-          content={`${process.env.BUILD_URL}/tips/${tip?.name}`}
-        />
+        <meta property="og:url" content={`${process.env.BUILD_URL}/tips/${tip?.name}`} />
         <meta property="og:title" content={tip?.name} />
         {/* TODO <meta property="og:image" content="" /> */}
       </Head>
@@ -40,6 +36,6 @@ const Tip: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Tip;

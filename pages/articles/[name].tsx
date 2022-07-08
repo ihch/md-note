@@ -26,21 +26,14 @@ const Article: React.FC = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@nemu_sou" />
         <meta name="twitter:creator" content="@nemu_sou" />
-        <meta
-          property="og:url"
-          content={`${process.env.BUILD_URL}/articles/${article?.name}`}
-        />
+        <meta property="og:url" content={`${process.env.BUILD_URL}/articles/${article?.name}`} />
         <meta property="og:title" content={article?.name} />
         {/* TODO <meta property="og:image" content="" /> */}
       </Head>
 
-      <div className="px-16 py-8">
-        {Post && (
-          <Post components={components} />
-        )}
-      </div>
+      <div className="px-16 py-8">{Post && <Post components={components} />}</div>
     </div>
   );
-}
+};
 
 export default Article;
