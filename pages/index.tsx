@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Articles from 'articles';
 import Tips from 'tips';
-import {H2} from 'components/Heading';
+import { H2 } from 'components/Heading';
 
 export default function Home() {
   const articles = Articles.articles;
