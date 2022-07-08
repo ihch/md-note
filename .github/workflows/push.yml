@@ -29,10 +29,10 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: install
-        run: yarn install
+        run: npm i
 
       - name: lint
-        run: yarn run eslint .
+        run: npm run lint
 
       - name: build
-        run: yarn build
+        run: npm run build
