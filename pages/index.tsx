@@ -19,7 +19,7 @@ export default function Home() {
       <div className="px-16 py-8">
         <div>
           <H2>記事一覧</H2>
-          <div className="ml-10">
+          <div className="ml-10 flex flex-col">
             {articles.map((article) => (
               <Link href={`/articles/${article.name}`} key={article.id}>
                 <a className="text-blue-600">
