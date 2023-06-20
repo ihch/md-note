@@ -21,10 +21,8 @@ export default function Home() {
           <H2>記事一覧</H2>
           <div className="ml-10 flex flex-col">
             {articles.map((article) => (
-              <Link href={`/articles/${article.name}`} key={article.id}>
-                <a className="text-blue-600">
-                  {article.date} {article.name}
-                </a>
+              <Link className="text-blue-600" href={`/articles/${article.name}`} key={article.id}>
+                {article.date} {article.name}
               </Link>
             ))}
           </div>
@@ -34,10 +32,8 @@ export default function Home() {
           <H2>Tips</H2>
           <div className="ml-10">
             {tips.map((tips) => (
-              <Link href={`/tips/${tips.name}`} key={tips.id}>
-                <a className="text-blue-600">
-                  {tips.date} {tips.name}
-                </a>
+              <Link className="text-blue-600" href={`/tips/${tips.name}`} key={tips.id}>
+                {tips.date} {tips.name}
               </Link>
             ))}
           </div>
