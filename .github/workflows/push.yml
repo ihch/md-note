@@ -3,36 +3,36 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - '**/**'
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - '**/**'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    build:
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 18.16.x
-      - name: version check
-        run: node -v
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 18.16.x
+            - name: version check
+              run: node -v
 
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+            - uses: actions/cache@v2
+              with:
+                  path: '**/node_modules'
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
 
-      - name: install
-        run: npm i
+            - name: install
+              run: npm i
 
-      - name: lint
-        run: npm run lint
+            - name: lint
+              run: npm run lint
 
-      - name: build
-        run: npm run build
+            - name: build
+              run: npm run build
