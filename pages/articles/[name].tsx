@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetServerSideProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Articles from 'articles';
 import { marked, Renderer } from 'marked';
@@ -40,7 +40,14 @@ const Article = ({ name, md }: { name: string, md: string }) => {
     );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticPaths: GetStaticPaths = () => {
+    return {
+        paths: Articles.articles.map((article) => `/articles/${article.name}`),
+        fallback: true,
+    }
+}
+
+export const getStaticProps: GetStaticProps = (context) => {
     const name = context.params?.name || null;
     const article = Articles.articles.find((article) => article.name === name);
     const md = article?.articleName ? fs.readFileSync(join('articles', `${article.articleName}.mdx`), { encoding: 'utf8' }) : '';
